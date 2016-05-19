@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.2 r9819"
-   sodipodi:docname="drawing.pdf">
+   sodipodi:docname="drawing-2.svg">
   <defs
      id="defs4">
     <marker
@@ -69,9 +69,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="375"
-     inkscape:cy="446.12039"
+     inkscape:zoom="1.4"
+     inkscape:cx="252.37723"
+     inkscape:cy="520"
      inkscape:document-units="px"
      inkscape:current-layer="layer1-7"
      showgrid="false"
@@ -163,14 +163,14 @@
       <text
          sodipodi:linespacing="125%"
          id="text5275"
-         y="204.84422"
-         x="191.92899"
+         y="216.84422"
+         x="173.92899"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
          xml:space="preserve"><tspan
-           y="204.84422"
-           x="191.92899"
+           y="216.84422"
+           x="173.92899"
            id="tspan5277"
-           sodipodi:role="line">$w_i = 1$</tspan></text>
+           sodipodi:role="line">$w_i = -1$</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text5279"
@@ -185,14 +185,86 @@
       <text
          sodipodi:linespacing="125%"
          id="text5283"
-         y="167.88843"
-         x="240.9783"
+         y="162.17415"
+         x="237.26402"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
          xml:space="preserve"><tspan
-           y="167.88843"
-           x="240.9783"
+           y="162.17415"
+           x="237.26402"
            id="tspan5285"
            sodipodi:role="line">$\sum</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         x="560"
+         y="86.647896"
+         id="text3035"
+         sodipodi:linespacing="125%"
+         transform="translate(-6.6099728,-406.4671)"><tspan
+           sodipodi:role="line"
+           id="tspan3037" /></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         x="842.85712"
+         y="18.076468"
+         id="text3039"
+         sodipodi:linespacing="125%"
+         transform="translate(-6.6099728,-406.4671)"><tspan
+           sodipodi:role="line"
+           id="tspan3041"
+           x="842.85712"
+           y="18.076468" /></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path4753-9"
+         d="m 98.64362,161.57906 106.96805,1.65335"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text5267-4"
+         y="168.49742"
+         x="51.314098"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
+         xml:space="preserve"><tspan
+           y="168.49742"
+           x="51.314098"
+           id="tspan5269-8"
+           sodipodi:role="line">$x_j$</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text5275-8"
+         y="148.18269"
+         x="89.941406"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
+         xml:space="preserve"><tspan
+           y="148.18269"
+           x="89.941406"
+           id="tspan5277-2"
+           sodipodi:role="line">$w_j = \frac{1}{\sum_{i}c_i}$</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         x="303.57144"
+         y="641.64789"
+         id="text3081"
+         sodipodi:linespacing="125%"
+         transform="translate(-6.6099728,-406.4671)"><tspan
+           sodipodi:role="line"
+           id="tspan3083"
+           x="303.57144"
+           y="641.64789" /></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text5275-4"
+         y="250.41238"
+         x="224.30521"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
+         xml:space="preserve"><tspan
+           y="250.41238"
+           x="224.30521"
+           id="tspan5277-5"
+           sodipodi:role="line">$\forall i |c_i = 0, \forallj |c_j = 1$</tspan></text>
     </g>
   </g>
 </svg>

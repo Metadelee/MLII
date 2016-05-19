@@ -1,6 +1,6 @@
 %% Creator: Inkscape 0.48.2, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'drawing.pdf' (pdf, eps, ps)
+%% Accompanies image file 'drawing-2.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{424.35116577bp}%
+    \setlength{\unitlength}{593.61163635bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,13 +48,16 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.32721774)%
-    \put(0,0){\includegraphics[width=\unitlength]{drawing.pdf}}%
-    \put(-0.00078355,0.28921553){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{bias}}}%
-    \put(-0.00268793,0.01498611){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x_i$}}}%
-    \put(0.12490494,0.26826745){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$w_0 = 0$}}}%
-    \put(0.19536666,0.07402161){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$w_i = 1$}}}%
-    \put(0.45626549,0.20161447){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\varphi = stp()$}}}%
-    \put(0.28783596,0.14369183){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\sum}}}%
+  \begin{picture}(1,0.25375678)%
+    \put(0,0){\includegraphics[width=\unitlength]{drawing-2.pdf}}%
+    \put(0.04736213,0.2265904){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{bias}}}%
+    \put(0.04600076,0.03055385){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x_i$}}}%
+    \put(0.13721222,0.21161538){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$w_0 = 0$}}}%
+    \put(0.16332443,0.05658397){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$w_i = -1$}}}%
+    \put(0.37408971,0.16396761){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\varphi = stp()$}}}%
+    \put(0.24867995,0.13026187){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\sum}}}%
+    \put(-0.0019215,0.12174011){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$x_j$}}}%
+    \put(0.05013585,0.14911791){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$w_j = \frac{1}{\sum_{i}c_i}$}}}%
+    \put(0.23121558,0.01134475){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\forall i |c_i = 0, \forallj |c_j = 1$}}}%
   \end{picture}%
 \endgroup%
