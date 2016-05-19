@@ -8,26 +8,48 @@
 
 \title{ML II:  Exercise 2} % Title
 
-\author{Tobias ..., Philipp...., Lina Gundelwein} % Author name
+\author{Tobias Graf, Philipp Rentzsch, Lina Gundelwein} % Author name
 
 \date{\today} % Date for the report
 
 \begin{document}
 \maketitle 
-\section*{Simple Networks}
+\section*{2.1 Simple Networks}
+\textbf{1. Logical OR on binary input vector:} The weight from the input bias is 0, for all $x_i$ is $w_i = 0$. The binary step function is used as activation.
 \begin{figure}[htb]
 \def\svgwidth{\textwidth}
 \input{drawing.pdf_tex} 
 \end{figure}
 
+\textbf{2. Arbitrary vector:} The weights depend the elements of $c$. $w_i$ is $\frac{1}{\sum_{i}c_i}$ for all $i$ where $c_i$ is 1 and -1 for all other $w_i$. The activation is again a binary step resulting 1 for $\tilde{z} = 1$ and 0 otherwise.
+
+\begin{figure}[htb]
+	\def\svgwidth{\textwidth}
+	\input{drawing-2.pdf_tex} 
+\end{figure}
+
+\newpage
+
 \begin{figure}[htb!]
 \def\svgwidth{\textwidth}
 \input{decision_boundaries.pdf_tex} 
 \end{figure}
-Generalization to higher dimensions: Draw hyperdimensional decision boundaries each dividing the input space into two subspaces. The number of boundaries relates to the dimension of the hypercube. 
+Generalization to higher dimensions: Draw hyperdimensional decision boundaries each dividing the input space into two subspaces. The number of boundaries relates to the dimension of the hypercube.
+
+\section*{2.2 3-layer Universal Classifier}
+
+The first layer are the discriminative hyperplanes from 2.1.3 that divide the input space into two subgroups. Layer two employs the Arbitrary vector neurons that each decide for one corner of the hypercube whether the data point belongs to the group. The third layer then combines the results from the corners with the same class using the OR neurons from 2.1.1.
+
+\begin{figure}[htb!]
+	\def\svgwidth{\textwidth}
+	\input{network.pdf_tex} 
+\end{figure}
+
+Problems we see with these zero loss training classifiers are that they may be over-fitted to the training data.
+
 \newpage
 
-\section*{Linear Activation Function}
+\section*{3.1 Linear Activation Function}
 Using any linear activation function $\varphi(x) = x$ leads to the following outputs:
 \begin{align*}
 z_1 = \varphi(B_1 z_0) = B_1z_0\\
@@ -35,7 +57,7 @@ z_2 = B_2z_1 = B_2B_1z_0
 \end{align*}
 This could be replaced by a single layer with the parameters $B = B_1B_2$.
 
-\section*{Weight Decay}
+\section*{3.2 Weight Decay}
 1. \begin{align*}
 Loss(w) &= Loss_0(w)+\frac{\lambda}{2N}w^{\tau}w\\
 \frac{\partial Loss}{\partial w} &= \frac{\partial}{\partial w} Loss_0 + \frac{\lambda}{N}w\\
@@ -52,4 +74,9 @@ w &= w-\tau \frac{\partial}{\partial w}Loss_0 - \tau \frac{\lambda}{N}sgn(w)
 \end{align*}
 
 \noindent 4. Since the biases are fixed and representing the offset, not the curvature of the model, the regularization has little effect on them.
+
+\section*{4. Application}
+
+Honestly, very complicated object structure.
+
 \end{document}
