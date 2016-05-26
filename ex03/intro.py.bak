@@ -63,7 +63,7 @@ train = theano.function(inputs=[X, Y], outputs=cost, updates=updates, allow_inpu
 predict = theano.function(inputs=[X], outputs=y_x, allow_input_downcast=True)
 
 for i in range(100): #you can adjust this if training takes too long
-    for start, end in zip(list(range(0, len(trX), 128)), list(range(128, len(trX), 128))):
+    for start, end in zip(range(0, len(trX), 128), range(128, len(trX), 128)):
         cost = train(trX[start:end], trY[start:end])
-    print(np.mean(np.argmax(teY, axis=1) == predict(teX)))
+    print np.mean(np.argmax(teY, axis=1) == predict(teX))
 
