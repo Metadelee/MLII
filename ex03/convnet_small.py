@@ -9,7 +9,7 @@ from theano.tensor.nnet.conv import conv2d
 from theano.tensor.signal.pool import pool_2d
 
 theano.config.assert_no_cpu='warn'
-theano.config.exception_verbosity='high'
+#theano.config.exception_verbosity='high'
 
 BSIZE = 512
 
@@ -57,18 +57,16 @@ def dropout(X, p=1):
     mask = srng.binomial(size=X.shape, p=p, dtype='floatX')
     return X * mask / p
 
-def model(X, w_c_1, w_c_2, w_c_3, w_f, w_o, p_use_input, p_use_hidden):
+def model(X, w_c_1, w_c_2, w_f, w_o, p_use_input, p_use_hidden):
     X = dropout(X, p_use_input)
     c_1 = convlayer(X, w_c_1, first=False)
     c_1 = dropout(c_1, p_use_hidden)
     c_2 = convlayer(c_1, w_c_2)
-    c_2 = dropout(c_2, p_use_hidden)
-    c_3 = convlayer(c_2, w_c_3)
-    c_3 = T.flatten(c_3, outdim=2)
-    f = rectify(T.dot(c_3, w_f))
+    c_2 = T.flatten(c_2, outdim=2)
+    f = rectify(T.dot(c_2, w_f))
     f = dropout(f, p_use_hidden)
     py_x = softmax(T.dot(f, w_o))
-    return c_1, c_2, c_3, f, py_x
+    return c_1, c_2, f, py_x
 
 trX, teX, trY, teY = mnist(onehot=True)
 trX = trX.reshape(-1,1,28,28) #training data
@@ -77,21 +75,23 @@ X = T.ftensor4()
 Y = T.fmatrix()
 
 w_c_1 = init_weights((32,1,5,5), 'w_c_1')
-w_c_2 = init_weights((64,32,5,5), 'w_c_2')
-w_c_3 = init_weights((128,64,2,2), 'w_c_3')
-w_f = init_weights((512, 625), 'w_f')
+w_c_2 = init_weights((16,32,5,5), 'w_c_2')
+w_f = init_weights((256, 625), 'w_f')
 w_o = init_weights((625, 10), 'w_o')
 
+h, h_1, h2, py_x = model(
+        X, w_c_1, w_c_2, w_f, w_o, 1., 1.)
 
-noise_h,noise_h_1, noise_h_2, noise_h2, noise_py_x = model(
-        X, w_c_1, w_c_2,w_c_3, w_f, w_o, 0.8, 0.5)
 
-h, h_1, h_2, h2, py_x = model(
-        X, w_c_1, w_c_2,w_c_3, w_f, w_o, 1., 1.)
+noise_h,noise_h_1, noise_h2, noise_py_x = model(
+        X, w_c_1, w_c_2, w_f, w_o, 0.8, 0.5)
+
+h, h_1, h2, py_x = model(
+        X, w_c_1, w_c_2, w_f, w_o, 1., 1.)
 y_x = T.argmax(py_x, axis=1)
 
 cost = T.mean(T.nnet.categorical_crossentropy(noise_py_x, Y))
-params = [w_c_1, w_c_2, w_c_3, w_f, w_o]
+params = [w_c_1, w_c_2, w_f, w_o]
 updates = RMSprop(cost, params, lr=0.001)
 
 train = theano.function(inputs=[X, Y], outputs=cost, updates=updates, allow_input_downcast=True)

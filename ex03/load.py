@@ -7,7 +7,7 @@ def one_hot(x,n):
 	if type(x) == list:
 		x = np.array(x)
 	x = x.flatten()
-	o_h = np.zeros((len(x),n))
+	o_h = np.zeros((len(x),n), dtype='float32')
 	o_h[np.arange(len(x)),x] = 1
 	return o_h
 
