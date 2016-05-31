@@ -1,0 +1,50 @@
+Traceback (most recent call last):
+  File "./prelu.py", line 69, in <module>
+    noise_h, noise_h2, noise_py_x = model(X, w_h, w_h2, w_o, s_h, s_h2, 0.8, 0.5)
+  File "./prelu.py", line 53, in model
+    h2 = dropout(h2, p_use_hidden)
+  File "./prelu.py", line 42, in dropout
+    mask = srng.binomial(size=X.shape, p=p, dtype='floatX')
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/sandbox/rng_mrg.py", line 1333, in binomial
+    x = self.uniform(size=size, nstreams=nstreams)
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/sandbox/rng_mrg.py", line 1293, in uniform
+    rstates = self.get_substream_rstates(nstreams, dtype)
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/sandbox/rng_mrg.py", line 1195, in get_substream_rstates
+    multMatVect(rval[0], A1p72, M1, A2p72, M2)
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/sandbox/rng_mrg.py", line 63, in multMatVect
+    [A_sym, s_sym, m_sym, A2_sym, s2_sym, m2_sym], o, profile=False)
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/compile/function.py", line 320, in function
+    output_keys=output_keys)
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/compile/pfunc.py", line 479, in pfunc
+    output_keys=output_keys)
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/compile/function_module.py", line 1777, in orig_function
+    defaults)
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/compile/function_module.py", line 1641, in create
+    input_storage=input_storage_lists, storage_map=storage_map)
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/gof/link.py", line 690, in make_thunk
+    storage_map=storage_map)[:3]
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/gof/vm.py", line 1003, in make_all
+    no_recycling))
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/gof/op.py", line 970, in make_thunk
+    no_recycling)
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/gof/op.py", line 879, in make_c_thunk
+    output_storage=node_output_storage)
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/gof/cc.py", line 1200, in make_thunk
+    keep_lock=keep_lock)
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/gof/cc.py", line 1143, in __compile__
+    keep_lock=keep_lock)
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/gof/cc.py", line 1594, in cthunk_factory
+    module = get_module_cache().module_from_key(
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/gof/cc.py", line 48, in get_module_cache
+    return cmodule.get_module_cache(config.compiledir, init_args=init_args)
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/gof/cmodule.py", line 1516, in get_module_cache
+    _module_cache = ModuleCache(dirname, **init_args)
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/gof/cmodule.py", line 657, in __init__
+    self.refresh()
+  File "/home/tg/anaconda3/envs/my-keras-env/lib/python3.4/site-packages/theano/gof/cmodule.py", line 772, in refresh
+    with open(key_pkl, 'rb') as f:
+KeyboardInterrupt
+
+real	0m3.416s
+user	0m2.151s
+sys	0m1.217s
