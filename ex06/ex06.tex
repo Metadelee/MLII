@@ -10,6 +10,8 @@
 
 
 \begin{document}
+\section{Conditional Independence}
+
 \noindent P(A) = 1st coin flip shows head\\
 P(B) = 2nd coin flip shows head\\
 P(C) = coin is biased (has two heads)
@@ -47,5 +49,16 @@ P(A,B) &= P(A, B|C)P(C)+P(A, B|\overline{C})P(\overline{C}) \\&= P(A|C)P(B|C)P(C
 \\
 P(A)P(B) &= \frac{9}{16} \neq P(A,B) = \frac{5}{8}
 \end{align*}
+
+\section{Boy Problem}
+	\begin{align*}
+		&\frac{p\left(A=b  \wedge B=b  \wedge \left(\left(A=b \wedge A_d = d\right)\vee \left(B=b \wedge B_d = d\right)\right)\right)}{p\left(\left(A=b \wedge A_d = d\right)\vee \left(B=b \wedge B_d = d\right)\right)}\\
+		=&\frac{p\left(A=b  \wedge B=b  \wedge \neg\left(A_d =\neg d \wedge B_d = \neg d\right)\right)}{p\left(\neg \left(\neg\left(A=b \wedge A_d = d\right)\wedge \neg\left(B=b \wedge B_d = d\right)\right)\right)}\\
+		=&\frac{\frac{1}{2}\frac{1}{2}\left(1-\frac{C-1}{C}\frac{C-1}{C}\right)}{1-\left(1-\frac{1}{2C}\right)^2}\\
+		=&\frac{\frac{1}{4}\left(1-\frac{(C-1)^2}{C^2}\right)}{1-\left(1-\frac{1}{2C}\right)^2}\\
+		=&\frac{\frac{1}{4}\left(1-\frac{(C^2-2C+1)}{C^2}\right)}{\frac{1}{C}-\frac{1}{4C^2}} \qquad \leftarrow\text{ extend by } \frac{C^2}{C^2} \\
+		=&\frac{\frac{1}{4}(2C-1)}{C-\frac{1}{4}}\\
+		=& \frac{2C-1}{4C-1}
+	\end{align*}
 
 \end{document}
