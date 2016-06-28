@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[svgnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+\title{ML II:  Exercise 2} % Title
+
+\author{Tobias ..., Philipp...., Lina Gundelwein} % Author name
+
+\date{\today} % Date for the report
+
+\begin{document}
+\maketitle 
+\section*{Simple Networks}
+\begin{figure}[htb]
+\def\svgwidth{\textwidth}
+\input{drawing.pdf_tex} 
+\end{figure}
+
+\begin{figure}[htb!]
+\def\svgwidth{\textwidth}
+\input{decision_boundaries.pdf_tex} 
+\end{figure}
+Generalization to higher dimensions: Draw hyperdimensional decision boundaries each dividing the input space into two subspaces. The number of boundaries relates to the dimension of the hypercube. 
+\newpage
+
+\section*{Linear Activation Function}
+Using any linear activation function $\varphi(x) = x$ leads to the following outputs:
+\begin{align*}
+z_1 = \varphi(B_1 z_0) = B_1z_0\\
+z_2 = B_2z_1 = B_2B_1z_0
+\end{align*}
+This could be replaced by a single layer with the parameters $B = B_1B_2$.
+
+\section*{Weight Decay}
+1. \begin{align*}
+Loss(w) &= Loss_0(w)+\frac{\lambda}{2N}w^{\tau}w\\
+\frac{\partial Loss}{\partial w} &= \frac{\partial}{\partial w} Loss_0 + \frac{\lambda}{N}w\\
+w &= w-\tau \frac{\partial}{\partial w}Loss_0 - \tau \frac{\lambda}{N}w \\
+&= (1-\frac{\tau\lambda}{N})w -\tau \frac{\partial}{\partial w}Loss_0\\
+\rightarrow \epsilon &= \frac{\tau\lambda}{N}
+\end{align*}
+2. The weight decays in proportion to its size. Thus, larger weights are penalized and weights with a small magnitude are preferred which avoids overfitting. \\
+
+\noindent 3. \begin{align*}
+Loss(w) &= Loss_0(w)+\frac{\lambda}{2N}|w|\\
+\frac{\partial Loss}{\partial w}& = \frac{\partial}{\partial w} Loss_0 + \frac{\lambda}{N}sgn(w)\\
+w &= w-\tau \frac{\partial}{\partial w}Loss_0 - \tau \frac{\lambda}{N}sgn(w) 
+\end{align*}
+
+\noindent 4. Since the biases are fixed and representing the offset, not the curvature of the model, the regularization has little effect on them.
+\end{document}

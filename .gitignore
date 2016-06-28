@@ -1,5 +1,7 @@
 */.ipynb_checkpoints/
+*/__pycache__/
 
 *.aux
 *.log
 *.gz
+ex03/datasets/
